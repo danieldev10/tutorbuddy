@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add your head content here -->
+    <title>Tutors List</title>
+</head>
+
+<body>
+    <!-- Header and navigation -->
+    <!-- Add your header and navigation content here -->
+
+    <!-- Page content -->
+    <div class="container">
+        <h1 class="mt-4">List of Tutors and Their Assigned Courses</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tutor Name</th>
+                    <th>Assigned Courses</th>
+                    <th>Course Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tutor : ${tutors}">
+                    <td th:text="${tutor.firstname + ' ' + tutor.lastname}"></td>
+                    <td>
+                        <ul>
+                            <li th:each="course : ${tutor.courses}" th:text="${course.course_title}"></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li th:each="course : ${tutor.courses}" th:text="${course.course_code}"></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Footer -->
+    <!-- Add your footer content here -->
+</body>
+
+</html>
